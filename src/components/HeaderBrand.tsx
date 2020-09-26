@@ -1,14 +1,24 @@
 import React from 'react';
+import {
+  NativeSyntheticEvent,
+  TextInputSubmitEditingEventData,
+} from 'react-native';
+
 import {Div, Input, Text, Icon, Button} from 'react-native-magnus';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {IPropertyType} from 'screen/Home';
 
 type HeaderBrandProps = {
   onChangePress: (type: string) => void;
+  onSearchPress: (value: string) => void;
   selected: IPropertyType;
 };
 
-const HeaderBrand = ({selected = 'buy', onChangePress}: HeaderBrandProps) => {
+const HeaderBrand = ({
+  selected = 'buy',
+  onChangePress,
+  onSearchPress,
+}: HeaderBrandProps) => {
   const isSelect = (
     params: string,
   ): {
@@ -60,6 +70,10 @@ const HeaderBrand = ({selected = 'buy', onChangePress}: HeaderBrandProps) => {
               <Input
                 placeholder="Search for properties"
                 py={15}
+                onSubmitEditing={(
+                  e: NativeSyntheticEvent<TextInputSubmitEditingEventData>,
+                ) => onSearchPress(e.nativeEvent.text)}
+                returnKeyType="search"
                 prefix={<Icon name="search1" color="gray500" />}
               />
             </Div>

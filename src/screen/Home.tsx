@@ -1,14 +1,18 @@
+import {StackScreenProps} from '@react-navigation/stack';
 import HeaderBrand from 'components/HeaderBrand';
 import React, {useState} from 'react';
 import {Keyboard, Linking, TouchableWithoutFeedback} from 'react-native';
 import {Button, Div, Image, Text} from 'react-native-magnus';
 import IconModules from 'react-native-vector-icons/AntDesign';
+import {HomeRouteParams} from 'routes/HomeNavigator';
 
 IconModules.loadFont();
 
 export type IPropertyType = 'buy' | 'rent';
 
-const Home = () => {
+type Props = StackScreenProps<HomeRouteParams, 'Home'>;
+
+const Home = (props: Props) => {
   const [propertyType, setPropertyType] = useState<IPropertyType>('buy');
 
   return (
@@ -17,6 +21,9 @@ const Home = () => {
         <HeaderBrand
           selected={propertyType}
           onChangePress={(type) => setPropertyType(type as IPropertyType)}
+          onSearchPress={(text) =>
+            props.navigation.navigate('Search', {query: text})
+          }
         />
         <Div flex={3} alignItems="center">
           <Div w="90%" mb={30} justifyContent="space-between" flexDir="row">
