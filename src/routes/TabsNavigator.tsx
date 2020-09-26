@@ -2,6 +2,7 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Div, Text} from 'react-native-magnus';
 import ProfileScreen from 'screen/Profile';
+import HomeNavigator from './HomeNavigator';
 
 interface ITabsNavProps {}
 
@@ -12,14 +13,6 @@ export type TabsRouteName = {
 };
 
 const Tabs = createBottomTabNavigator<TabsRouteName>();
-
-const HomeScreen = () => {
-  return (
-    <Div>
-      <Text> Home Screen </Text>
-    </Div>
-  );
-};
 
 const FavoriteScreen = () => {
   return (
@@ -32,7 +25,7 @@ const FavoriteScreen = () => {
 const TabsNavigator: React.FC<ITabsNavProps> = () => {
   return (
     <Tabs.Navigator initialRouteName="Home">
-      <Tabs.Screen name="Home" component={HomeScreen} />
+      <Tabs.Screen name="Home" component={HomeNavigator} />
       <Tabs.Screen name="Favorite" component={FavoriteScreen} />
       <Tabs.Screen name="Profile" component={ProfileScreen} />
     </Tabs.Navigator>

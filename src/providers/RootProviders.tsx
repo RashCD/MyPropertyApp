@@ -3,8 +3,14 @@ import {ThemeProvider} from 'react-native-magnus';
 import UserProvider from './UserProvider';
 
 const RootProviders: React.FC = ({children}) => {
+  const theme = {
+    colors: {
+      brand: '#0081c6',
+    },
+  };
+
   return (
-    <ThemeProvider>
+    <ThemeProvider theme={theme}>
       <UserProvider>{children}</UserProvider>
     </ThemeProvider>
   );
