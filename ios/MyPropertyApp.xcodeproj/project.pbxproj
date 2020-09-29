@@ -161,7 +161,6 @@
 				E31466A37B55D63E27DF44B9 /* Pods-MyPropertyApp-tvOSTests.debug.xcconfig */,
 				1EE035C2A25210CAD2AA4B49 /* Pods-MyPropertyApp-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -375,7 +374,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+			shellScript = "export PROJECT_ROOT=../\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
 		0CA61B78FE8317033D3D1FED /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
