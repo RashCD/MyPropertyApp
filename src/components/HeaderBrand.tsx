@@ -41,10 +41,10 @@ const HeaderBrand = ({
   };
 
   return (
-    <Div flex={1} bg="brand">
+    <Div h="30%" w="100%" bg="brand">
       <SafeAreaView style={{flex: 1}}>
         <Div flex={1} alignItems="center">
-          <Text fontSize="3xl" fontWeight="bold" color="white" mb={10}>
+          <Text fontSize="3xl" fontWeight="bold" color="white" my={10}>
             iProperty.com.my
           </Text>
           <Div rounded="md" w="90%" h="auto" bg="white">

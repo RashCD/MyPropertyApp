@@ -8,13 +8,13 @@ interface ITabsNavProps {}
 
 export type TabsRouteName = {
   Home: undefined;
-  Favorite: undefined;
-  Profile: undefined;
+  Saved: undefined;
+  Me: undefined;
 };
 
 const Tabs = createBottomTabNavigator<TabsRouteName>();
 
-const FavoriteScreen = () => {
+const SavedScreen = () => {
   return (
     <Div>
       <Text> Favorite Screen </Text>
@@ -26,8 +26,8 @@ const TabsNavigator: React.FC<ITabsNavProps> = () => {
   return (
     <Tabs.Navigator initialRouteName="Home">
       <Tabs.Screen name="Home" component={HomeNavigator} />
-      <Tabs.Screen name="Favorite" component={FavoriteScreen} />
-      <Tabs.Screen name="Profile" component={ProfileScreen} />
+      <Tabs.Screen name="Saved" component={SavedScreen} />
+      <Tabs.Screen name="Me" component={ProfileScreen} />
     </Tabs.Navigator>
   );
 };

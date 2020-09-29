@@ -3,10 +3,7 @@ import HeaderBrand from 'components/HeaderBrand';
 import React, {useState} from 'react';
 import {Keyboard, Linking, TouchableWithoutFeedback} from 'react-native';
 import {Button, Div, Image, Text} from 'react-native-magnus';
-import IconModules from 'react-native-vector-icons/AntDesign';
 import {HomeRouteParams} from 'routes/HomeNavigator';
-
-IconModules.loadFont();
 
 export type IPropertyType = 'buy' | 'rent';
 

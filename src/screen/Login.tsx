@@ -1,5 +1,4 @@
 import React, {useContext, useState} from 'react';
-import IconModules from 'react-native-vector-icons/AntDesign';
 import {
   Button,
   Icon,
@@ -16,8 +15,6 @@ import {
   TextInputChangeEventData,
   TouchableWithoutFeedback,
 } from 'react-native';
-
-IconModules.loadFont();
 
 const Login = () => {
   const {login} = useContext(UserContext);
@@ -46,7 +43,9 @@ const Login = () => {
           w={200}
           mb="3xl"
           focusBorderColor="blue700"
-          suffix={<Icon name="search1" color="gray900" />}
+          suffix={
+            <Icon name="search1" color="gray900" fontFamily="AntDesign" />
+          }
           value={username}
           onChange={(e: NativeSyntheticEvent<TextInputChangeEventData>) =>
             setUsername(e.nativeEvent.text)
@@ -59,7 +58,14 @@ const Login = () => {
           py="lg"
           bg="blue500"
           color="white"
-          suffix={<Icon name="arrowright" ml="md" color="white" />}
+          suffix={
+            <Icon
+              name="arrowright"
+              ml="md"
+              color="white"
+              fontFamily="AntDesign"
+            />
+          }
           onPress={() => {
             if (snackbarLightRef.current && !username) {
               return snackbarLightRef.current.show();
@@ -74,6 +80,7 @@ const Login = () => {
               name="exclamationcircleo"
               color="gray800"
               fontSize="subheader"
+              fontFamily="AntDesign"
             />
           }
           ref={snackbarLightRef}
